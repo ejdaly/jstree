@@ -2043,10 +2043,15 @@
 				}
 				else {
 					if(!this.is_selected(obj)) {
+						// EJD - this in effect disables multiple selections, but 
+						// keeps the functionality that if you click an already selected row
+						// it unselects it
+						this.deselect_all(true);
 						this.select_node(obj);
 					}
 					else {
 						this.deselect_node(obj);
+						this.deselect_all(true);
 					}
 				}
 			}
